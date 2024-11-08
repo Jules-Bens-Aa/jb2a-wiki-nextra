@@ -1,21 +1,25 @@
 {
   "index": "Home",
   "getting-started": "Getting Started",
-  "faq": "Frequently Asked Questions",
-  "troubleshooting": "Troubleshouting",
-  
-  
-  
-  
-  
-  "about": {
-    "title": "About",
-    "type": "page"
+  "---": {
+    "type": "separator"
   },
-  "contact": {
-    "title": "Contact ↗",
+  "faq": "Frequently Asked Questions",
+  "troubleshooting": "Troubleshooting",
+  "template": {
+    "title": "Template"
+  }, 
+
+  "alv": {
+    "title": "Asset Library Viewer ↗",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://library.jb2a.com/",
+    "newWindow": true
+  },
+  "patreon": {
+    "title": "Patreon ↗",
+    "type": "page",
+    "href": "https://www.patreon.com/JB2A",
     "newWindow": true
   }
 }
