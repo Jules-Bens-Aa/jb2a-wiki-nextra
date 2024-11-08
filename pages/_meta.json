@@ -1,7 +1,13 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "index": "Home",
+  "getting-started": "Getting Started",
+  "faq": "Frequently Asked Questions",
+  "troubleshooting": "Troubleshouting",
+  
+  
+  
+  
+  
   "about": {
     "title": "About",
     "type": "page"
