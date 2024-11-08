@@ -1,3 +1,5 @@
+
+
 # This is the template page
 
 ## H2 Subject Title
@@ -30,8 +32,38 @@ function Counter() {
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-## H2 Another Subject Title
+## H2 Callouts
 
+Callouts don't work when using the following documentation code.
+
+```mdx {1}
+import { Callout } from 'nextra/components'
+ 
+<Callout type="info" emoji="ℹ️">
+  Today is Friday.
+</Callout>
+```
+To resolve this issue, follow these steps :
+
+
+
+### Step 1
+ Close the server and run the following command
+``` filename="command" copy
+pnpm install nextra nextra-theme-docs
+```
+### Step 2
+The installation complete, modify the code for callouts as follow
+
+```mdx {1} copy
+import { Callout } from 'nextra-theme-docs'
+ 
+<Callout type="info" emoji="ℹ️">
+  Today is Friday.
+</Callout>
+```
+### Step 3
+Copy the code, paste the first line at the top of your mdx and the reste where you want your callout to display.
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
