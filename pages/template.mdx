@@ -3,38 +3,116 @@ import { Callout } from 'nextra/components'
  
 # This is the template page
 
-## H2 Subject Title
+## Custom Heading Id
 
-### H3 An indepth subject
+[Documentation](https://nextra.site/docs/guide/markdown#custom-heading-id)
+
+### Creating a custom Id
+
+You can create a custom heading to reduce its size or make it more convenient to use/share.
+
+```mdx filename="MDX"
+## A very descriptive heading [#descrip-head]
+```
+Pasting this directly on a `.mdx` file will give the following result.
+
+### A very descriptive heading [#descrip-head]
+
+It looks like nothing changes but pay attention to its the heading id in the URL.
+
+## Code Blocks H2
+
+[Documentation](https://nextra.site/docs/guide/syntax-highlighting)
+
+### Using features H3
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
 
+#### Add a copy button H4
+
 ```js copy
-console.log('hello, world')
+console.log("hello, world")
 ```
-
-```js filename="example.js" copy
-console.log('hello, world')
-```
-
-### H3 An indepth subject
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-### H3 Another indepth subject [#ai-s]
+#### Display line numbers
 
 ```js showLineNumbers
-import { useState } from 'react'
- 
-function Counter() {
-  const [count, setCount] = useState(0)
-  return <button onClick={() => setCount(count + 1)}>{count}</button>
-}
+console.log("hello, world")
+console.log("hello, world ... again")
+console.log("And if I don't see you again, good evening and good night")
+console.log("Just for an additional line")
+
+console.log("oh ... a return to the line is enough to add a line !")
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+#### Add a title to the block
 
-## H2 Callouts
+```js filename="example.js"
+console.log("I added a title to the block")
+```
+
+#### Highlight a specific line
+
+```js {3}
+console.log("hello, world")
+console.log("hello, world ... again")
+console.log("And if I don't see you again, good evening and good night")
+```
+
+#### Highlight a specific part
+
+```js /hello, world/
+console.log("hello, world")
+console.log("hello, world ... again")
+console.log("And if I don't see you again, good evening and good night")
+```
+
+### Combining Features
+
+You can also combine features!
+
+```js showLineNumbers {3} /hello, world/ copy filename="example.js" 
+console.log("hello, world")
+console.log("hello, world ... again")
+console.log("And if I don't see you again, good evening and good night")
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+
+## Steps
+
+Handy feature to visually format steps to follow.
+
+[Documentation](https://nextra.site/docs/guide/built-ins/steps)
+
+### Easy to use
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+
+```mdx filename="MDX" copy
+<Steps>
+### Uses headings H3
+#### Inserts H4
+##### And below
+### Visible in the TOC
+But can be excluded from TOC
+{<h3>Obi-Wan-Kenobi</h3>}
+</Steps>
+```
+
+### Cool Result
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+
+<Steps>
+### Uses headings H3
+#### Inserts H4
+##### And below
+### Always visible in the TOC
+But can be excluded from TOC
+{<h3>Obi-Wan-Kenobi</h3>}
+</Steps>
+
+## Callouts
 
 Callouts don't work when using the following documentation code.
 
@@ -54,24 +132,25 @@ To resolve this issue, follow these steps :
 
 <Steps>
 
-### Step 1
+### Update pnpm
  Close the server and run the following command
 
 ```bash filename="Terminal" copy
 pnpm update
 ```
 
-### Step 2
+### Run the server again
 The update complete, run the localserver with
 
 ```bash filename="Terminal" copy
-pnpm dex
+pnpm dev
 ```
 
-And that's it. You're done. No futher steps.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
 
-### Step 3
-There are different types of callouts, with their own color and icon. Like these ones:
+### And done!
+
+And that's it. You're done. No futher steps. There are different types of callouts, with their own color and icon. Like these ones:
 
 <Callout type="info">
   A **callout** is a short piece of text intended to attract attention.
