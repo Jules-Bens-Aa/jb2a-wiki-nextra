@@ -1,0 +1,13 @@
+{
+    "other-modules": {
+        "title": "Other Modules"
+    },
+    "online-hosting": {
+        "title": "Online Hosting",
+        "theme":{
+            "typesetting": "article",
+            "layout": "full"
+        }
+    }
+}
+
