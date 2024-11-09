@@ -4,7 +4,6 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 const config: DocsThemeConfig = {
   primaryHue: { dark: 45, light: 35 },
   primarySaturation: { dark: 100, light: 50 },
-  
   logo: (
     <>
       <img
