@@ -1,5 +1,6 @@
 import { Steps } from 'nextra/components'
 import { Callout } from 'nextra/components'
+import { Cards, Card } from 'nextra/components'
  
 # This is the template page
 
@@ -19,6 +20,20 @@ Pasting this directly on a `.mdx` file will give the following result.
 ### A very descriptive heading [#descrip-head]
 
 It looks like nothing changes but pay attention to its the heading id in the URL.
+
+### Masking a Heading from TOC
+
+Masking a heading has never been easier!
+
+```mdx filename="MDX"
+#### Masked Heading from TOC
+This heading will appear on TOC
+{<h4>Masked Heading from TOC</h4>}
+This heading will be masked from TOC
+```
+{<h4>Masked Heading from TOC</h4>}
+
+And ... voila ! this heading doesn't appear in the TOC. Simple as that!
 
 ## Code Blocks H2
 
@@ -114,11 +129,13 @@ But can be excluded from TOC
 
 ## Callouts
 
-Callouts don't work when using the following documentation code.
+[Documentation](https://nextra.site/docs/guide/built-ins/callout)
 
 <Callout type="info">
   You have to do something before Callouts work right of the bat
 </Callout>
+
+Callouts don't work when using the following documentation code.
 
 ```mdx {1}
 import { Callout } from 'nextra/components'
@@ -179,10 +196,75 @@ import { Callout } from 'nextra/components'
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 
-### H3 An very indepth subject
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Cards
 
-#### H4 A notion to tell
+[Documentation](https://nextra.site/docs/guide/built-ins/cards)
+
+### First things First
+
+You can add icons in front of the title of a card. However to be able to do that, there is a file we had to create.
+
+A file referencing all svgs named `index.ts`and located in this directory `/components/icons`
+
+<Callout type="error">
+Icons are not working at the moment
+</Callout>
+
+### A Single Card
+
+This is the code to create a card
+
+```mdx filename="MDX"
+// place both lines on top of your page
+import { Cards, Card } from 'nextra/components'
+// choose the icon you want to import for this page
+import { CardsIcon, OneIcon, WarningIcon } from '../components/icons'
+
+  <Cards.Card
+    title="Getting Starting"
+    href="/pages/getting-started"
+    arrow
+  />
+``` 
+
+You would get this result. The card is very close to this line. A way to add more space between them would be nice. Although this type of card should be after a heading 1 or 2.
+
+##### Result
+
+  <Cards.Card
+    title="Getting Starting"
+    href="/getting-started"
+    arrow
+  />
+  or
+  <Cards>
+    <Cards.Card
+    title="Getting Starting"
+    href="/getting-started"
+    arrow
+  />
+  </Cards>
+
+### Grouped Cards
+
+  <Cards>
+    <Cards.Card
+    title="Getting Starting"
+    href="/getting-started"
+    arrow
+  />
+      <Cards.Card
+    title="Getting Starting"
+    href="/getting-started"
+    arrow
+  />
+      <Cards.Card
+    title="Getting Starting"
+    href="/getting-started"
+    arrow
+  />
+
+  </Cards>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
 
