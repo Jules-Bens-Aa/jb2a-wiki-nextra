@@ -1,5 +1,10 @@
 {
     "mci": "Most Common Issues",
-    "jb2a": "JB2A",
+    "jb2a": {
+        "title": "JB2A",
+        "theme": {
+            "typesetting": "default"
+        }
+    },
     "foundryvtt": "Foundry VTT"
 }
