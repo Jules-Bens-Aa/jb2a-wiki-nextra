@@ -1,8 +1,17 @@
 import { react } from 'react'
+import { Steps } from 'nextra/components'
+import { Callout } from 'nextra/components'
+import { Cards, Card } from 'nextra/components'
 
 export function Content({ children }) {
     return (
         <p className="text-green-500">{ children }</p>
+    )
+}
+
+export function CalloutTitle({ children }) {
+    return (
+        <span><p className="text-1xl font-bold underline">{ children }</p></span>
     )
 }
 
@@ -12,4 +21,58 @@ export function Content({ children }) {
 
 <Content>This paragraph tag has a className calling the same tailwind CSS style, using a react component</Content>
 
+## How to delete a branch
+```js copy
+// deletes it from your local. -D if the branch isn't merged and you still want it gone
+git branch -d branch_name
+// deletes it from the remote    
+git push origin :branch_name
+// the best utility for cleaning outdated branches.
+// It will connect to a shared remote repository remote and fetch all remote branch refs. 
+// It will then delete remote refs that are no longer in use on the remote repository.
+git fetch --prune
+```
 
+
+## How to get new changes from main branch to my personal branch [#branch update Title]
+<em>There are three branches named 'dev1', 'dev2' and 'main'. I am working on 'dev2' branch and my friend is working on 'dev1' branch. We both are fetching and uploading our code from 'main' branch. ('main' branch is the ultimate branch)
+Now, suppose I made some changes locally in my 'dev2' branch. Now, I want to push those changes to 'dev2' branch. But, before that, my friend has pushed some changes from'dev1' to 'main' branch. So what should I do?</em>
+
+<Callout type="info">
+    <>
+        <CalloutTitle>Answer</CalloutTitle>
+        <Content>You need to make sure your current branch(dev1) is up to date with the main branch to avoid conflicts. See steps below</Content>
+    </>
+    
+</Callout>
+
+<Steps>
+### You can stash your changes on your current branch(this will store your changes in a stash while you pull the latest on main):[#branch update Step 1] 
+<em>We're giving this "Step Title" a different id, using markdown mdx so that the anchor has a shorter name "#branch update Step 1" just addind ```[#branch update Step 1]```at the end </em>
+```js
+git stash
+```
+
+### Then check out main and pull the latests changes [#branch update Step 2]
+```js
+git checkout main
+git pull
+```
+
+### From there you can check out your branch: [#branch update Step 3]
+```js
+git checkout dev1
+```
+
+### Then merge the latest changes from main into your branch: [#branch update Step 4]
+```js
+git merge main
+```
+
+### After that step you can pop your stash into your newly updated branch: [#branch update Step 5]
+```js
+git stash pop
+```
+
+### And now your branch(dev1) has all the latest changes from main as well as the changes you've made locally [#branch update Step 6]
+</Steps>
