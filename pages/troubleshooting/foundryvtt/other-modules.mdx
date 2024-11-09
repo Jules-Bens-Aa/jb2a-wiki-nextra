@@ -1,1 +1,15 @@
+import { react } from 'react'
+
+export function Content({ children }) {
+    return (
+        <p className="text-green-500">{ children }</p>
+    )
+}
+
 # Other Modules
+
+<p className="text-green-500">This paragraph tag has a className calling a specific tailwind CSS style</p>
+
+<Content>This paragraph tag has a className calling the same tailwind CSS style, using a react component</Content>
+
+
