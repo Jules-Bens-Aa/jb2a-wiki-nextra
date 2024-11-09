@@ -1,0 +1,31 @@
+import { Tabs } from 'nextra/components'
+import { react } from 'react'
+
+export function Title({ children }) {
+    return (
+        <h2 className="text-3xl font-bold underline">{ children }</h2>
+    )
+}
+
+export function Paragraph({ children }) {
+    return (
+        <p className="text-yellow-100">{ children }</p>
+    )
+}
+
+
+<Tabs items={['Forge', 'Molten Hosting', 'Foundry Server']} defaultIndex="0">
+<Tabs.Tab>
+    <Title>Forge</Title>
+    <Paragraph>
+        If you're on the Forge
+    </Paragraph>
+</Tabs.Tab>
+<Tabs.Tab>This is text about Molten Hosting</Tabs.Tab>
+<Tabs.Tab>What is Foundry Server?</Tabs.Tab>
+</Tabs>
+
+
+
+
+
